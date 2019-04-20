@@ -2,7 +2,6 @@ from typing import *
 
 
 class Solution:
-
     def updateMatrix(self, matrix: List[List[int]]) -> List[List[int]]:
         if not matrix:
             return []
@@ -26,13 +25,23 @@ class Solution:
                 self.get_distance(matrix, i, j, distance, 1)
         return distance
 
-    def get_distance(self, matrix: List[List[int]], x: int, y: int, distance: List[List[int]], left_or_right=0):
+    def get_distance(self,
+                     matrix: List[List[int]],
+                     x: int,
+                     y: int,
+                     distance: List[List[int]],
+                     left_or_right=0):
         position = []
-        direction = [(-1, 0), (0, -1)] if left_or_right == 0 else [(-1, 0), (0, -1), (1, 0), (0, 1)]
+        direction = [(-1, 0), (0, -1)] if left_or_right == 0 else [(-1, 0),
+                                                                   (0, -1),
+                                                                   (1, 0),
+                                                                   (0, 1)]
         for d_x, d_y in direction:
             f_x, f_y = x + d_x, y + d_y
-            if f_x < 0 or f_x >= len(matrix) or f_y < 0 or f_y >= len(matrix[0]):
+            if f_x < 0 or f_x >= len(matrix) or f_y < 0 or f_y >= len(
+                    matrix[0]):
                 continue
             position.append((f_x, f_y))
         if position:
-            distance[x][y] = min([distance[t_x][t_y] for t_x, t_y in position]) + 1
+            distance[x][y] = min([distance[t_x][t_y]
+                                  for t_x, t_y in position]) + 1
