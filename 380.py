@@ -28,8 +28,7 @@ class RandomizedSet:
             return False
         val_index = self._map[val]
         last_value = self._stack[-1]
-        self._stack[val_index], self._stack[
-            self._map[last_value]] = last_value, val
+        self._stack[val_index], self._stack[self._map[last_value]] = last_value, val
         self._map[last_value] = val_index
         del self._map[val]
         self._stack.pop()

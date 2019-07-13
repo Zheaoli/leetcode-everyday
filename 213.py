@@ -3,11 +3,12 @@ class Solution:
         if not nums:
             return 0
         if len(nums) > 2:
-            return max([
-                self.self_rob(nums, 0,
-                              len(nums) - 1),
-                self.self_rob(nums, 1, len(nums))
-            ])
+            return max(
+                [
+                    self.self_rob(nums, 0, len(nums) - 1),
+                    self.self_rob(nums, 1, len(nums)),
+                ]
+            )
         else:
             return max(nums)
 

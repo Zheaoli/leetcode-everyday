@@ -2,7 +2,7 @@ import typing
 
 
 class Solution:
-    operator_rule = {'+': 1, '-': 1, '*': 2, '/': 2}
+    operator_rule = {"+": 1, "-": 1, "*": 2, "/": 2}
 
     def calculate(self, s: str) -> int:
         s = s.replace(" ", "")
@@ -38,8 +38,10 @@ class Solution:
                         operators.append(item)
                         break
                     operator = operators.pop()
-                    if operator == "(" or self.operator_rule[
-                            item] > self.operator_rule[operator]:
+                    if (
+                        operator == "("
+                        or self.operator_rule[item] > self.operator_rule[operator]
+                    ):
                         operators.append(operator)
                         operators.append(item)
                         break
@@ -66,8 +68,7 @@ class Solution:
             if item in ["+", "-", "*", "/"]:
                 temp1 = temp_value.pop()
                 temp2 = temp_value.pop()
-                temp_value.append(
-                    self.calculate_sub_expression(temp2, temp1, item))
+                temp_value.append(self.calculate_sub_expression(temp2, temp1, item))
             else:
                 temp_value.append(item)
 

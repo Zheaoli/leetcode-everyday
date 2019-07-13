@@ -25,6 +25,7 @@ class Codec:
         :rtype: TreeNode
         """
         import collections
+
         vals = collections.deque(val for val in data.split(","))
 
         def build():

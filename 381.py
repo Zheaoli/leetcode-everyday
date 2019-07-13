@@ -26,7 +26,8 @@ class RandomizedCollection(object):
         :type val: int
         :rtype: bool
         """
-        if val not in self.index: return False
+        if val not in self.index:
+            return False
         last = self.output.pop()
         self.index[last].remove(len(self.output))
         if val != last:
