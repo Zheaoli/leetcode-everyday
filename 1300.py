@@ -37,7 +37,9 @@ class Solution:
                     arr[i], abs(sum[i] - arr[i] + arr[i] * (origin_length - i) - target)
                 )
             )
-        result = sorted(result, key=cmp_to_key(lambda a, b: a.difference - b.difference))
+        result = sorted(
+            result, key=cmp_to_key(lambda a, b: a.difference - b.difference)
+        )
         return result[0].data
 
 
