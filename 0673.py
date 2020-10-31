@@ -1,5 +1,6 @@
 import collections
 import bisect
+from typing import List
 
 
 class Solution:
