@@ -11,7 +11,7 @@ class TreeNode:
 
 class Solution:
     def getTargetCopy(
-            self, original: TreeNode, cloned: TreeNode, target: TreeNode
+        self, original: TreeNode, cloned: TreeNode, target: TreeNode
     ) -> TreeNode:
         return self.search_node(cloned, self.search_point(original, target))
 
@@ -34,7 +34,7 @@ class Solution:
         return -1, -1
 
     def search_node(
-            self, cloned: TreeNode, position: Tuple[int, int]
+        self, cloned: TreeNode, position: Tuple[int, int]
     ) -> Optional[TreeNode]:
         queue = [cloned]
         level = 0
