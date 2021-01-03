@@ -14,7 +14,9 @@ class Solution:
             return
         for i in range(n):
             if i + 1 not in series:
-                if ((i + 1) % (len(series) + 1) == 0) or ((len(series) + 1) % (i + 1) == 0):
+                if ((i + 1) % (len(series) + 1) == 0) or (
+                    (len(series) + 1) % (i + 1) == 0
+                ):
                     series[i + 1] = i + 1
                     self.search(n, series, results)
                     del series[i + 1]
