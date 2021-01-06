@@ -6,22 +6,32 @@ class ListNode:
 
 class Solution:
     def deleteDuplicates(self, head: ListNode) -> ListNode:
-        dummy = cur = ListNode(-101)
-        data = set()
-        while head:
-            if head.val not in data:
-                if head.next and head.next.val == head.val:
-                    data.add(head.val)
-                    continue
-                cur.next = head
-                cur = cur.next
-                data.add(head.val)
-                head = head.next
-                cur.next = None
-                continue
-            head = head.next
+        dummy = ListNode(-101)
+        dummy.next = head
+        pre_node = dummy
+        cur_node = pre_node.next
+        next_node = cur_node.next
+        dup = False
+        while True:
+            if not next_node:
+                break
+            if cur_node.val != next_node.val:
+                if dup:
+                    pre_node.next = next_node
+                    dup = False
+                else:
+                    pre_node = cur_node
+                cur_node = next_node
+                next_node = next_node.next
+            else:
+                dup = True
+                next_node = next_node.next
+
+        if dup is True:
+            pre_node.next = next_node
         return dummy.next
 
 
-node1 = ListNode(1, next=ListNode(2, next=ListNode(2)))
+node1 = ListNode(1, next=ListNode(2, next=ListNode(3, next=ListNode(3, next=ListNode(4, next=ListNode(4, next=ListNode(
+    5)))))))
 Solution().deleteDuplicates(node1)
