@@ -4,7 +4,8 @@ from typing import List
 class Solution:
     def findCircleNum(self, isConnected: List[List[int]]) -> int:
         def find(node):
-            if circles[node] == node: return node
+            if circles[node] == node:
+                return node
             root = find(circles[node])
             circles[node] = root
             return root
