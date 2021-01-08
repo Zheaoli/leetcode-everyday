@@ -5,7 +5,7 @@ class Solution:
     def closestDivisors(self, num: int) -> List[int]:
         min_sub = num
         result = []
-        for i in range(1, int((num + 2) / 2)+1):
+        for i in range(1, int((num + 2) / 2) + 1):
             if (num + 1) % i == 0:
                 temp1, temp2 = i, int((num + 1) / i)
                 if temp1 == temp2:
@@ -23,5 +23,6 @@ class Solution:
                     min_sub = abs_sub
                     result = [temp1, temp2]
         return result
+
 
 print(Solution().closestDivisors(1))

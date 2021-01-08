@@ -32,6 +32,13 @@ class Solution:
         return dummy.next
 
 
-node1 = ListNode(1, next=ListNode(2, next=ListNode(3, next=ListNode(3, next=ListNode(4, next=ListNode(4, next=ListNode(
-    5)))))))
+node1 = ListNode(
+    1,
+    next=ListNode(
+        2,
+        next=ListNode(
+            3, next=ListNode(3, next=ListNode(4, next=ListNode(4, next=ListNode(5))))
+        ),
+    ),
+)
 Solution().deleteDuplicates(node1)

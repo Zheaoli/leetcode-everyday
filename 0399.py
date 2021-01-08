@@ -3,7 +3,9 @@ from typing import List
 
 
 class Solution:
-    def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
+    def calcEquation(
+        self, equations: List[List[str]], values: List[float], queries: List[List[str]]
+    ) -> List[float]:
         self.data = {}
         self.visited = set()
         for equation, value in zip(equations, values):
@@ -29,5 +31,10 @@ class Solution:
         return -1
 
 
-print(Solution().calcEquation([["a", "b"], ["b", "c"], ["bc", "cd"]], values=[1.5, 2.5, 5.0],
-                              queries=[["a", "c"], ["c", "b"], ["bc", "cd"], ["cd", "bc"]]))
+print(
+    Solution().calcEquation(
+        [["a", "b"], ["b", "c"], ["bc", "cd"]],
+        values=[1.5, 2.5, 5.0],
+        queries=[["a", "c"], ["c", "b"], ["bc", "cd"], ["cd", "bc"]],
+    )
+)
