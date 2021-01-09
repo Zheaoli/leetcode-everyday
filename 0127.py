@@ -1,7 +1,6 @@
-import collections
-from typing import List, Dict, Set
 from collections import deque
 from string import ascii_lowercase
+from typing import List, Set
 
 
 class Solution:
