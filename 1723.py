@@ -16,13 +16,13 @@ class Solution:
         return left
 
     def search(
-            self,
-            i: int,
-            cap: List[int],
-            x: int,
-            length: int,
-            worker_count: int,
-            jobs: List[int],
+        self,
+        i: int,
+        cap: List[int],
+        x: int,
+        length: int,
+        worker_count: int,
+        jobs: List[int],
     ) -> bool:
         if i == length:
             return True
