@@ -22,7 +22,7 @@ class Solution:
         if position > len(nums) - k:
             return self.findKthLargest(nums[:position], k - (len(nums) - position))
         elif position < len(nums) - k:
-            return self.findKthLargest(nums[position + 1:], k)
+            return self.findKthLargest(nums[position + 1 :], k)
         else:
             return nums[position]
 
